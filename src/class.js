@@ -7,8 +7,20 @@
 // for a potential password that will be compared to the `password` property.
 // Return true if the potential password matches the `password` property.  Otherwise return false.
 
-// code here
+class User {
+  constructor(options) {
+    this.email = options.email;
+    this.password = options.password;
+    // set a username and password property on the user object that is created
+  }
 
+  comparePasswords(pass) {
+    if (pass === this.password) {
+      return true;
+    }
+    return false;
+  }
+}
 // Part 2
 // Create a class called `Animal` and a class called `Cat` using ES6 classes.
 // `Cat` should extend the `Animal` class.
@@ -19,7 +31,25 @@
 // `meow` that should return the string `<name> meowed!` where `<name>` is the `name`
 // property set on the Cat instance.
 
-// code here
+class Animal {
+  constructor(options) {
+    this.age = options.age;
+  }
+  growOlder() {
+    return ++this.age; // reminder ++this. sums the number, saves it and returns it'
+    // this.age++ would return the old number, increment that number and save it
+  }
+  }
+class Cat extends Animal {
+  constructor(options) {
+    super(options); // whatever we give the constructor in the Parent, we give to subclas
+    this.name = options.name;
+  }
+
+  meow() {
+    return `${this.name} meowed!`;
+  }
+}
 
 /* eslint-disable no-undef */
 
